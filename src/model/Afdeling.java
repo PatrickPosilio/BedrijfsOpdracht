@@ -5,33 +5,21 @@ package model;
  * Purpose of the program
  */
 public class Afdeling {
-    public static final String DEFAULT_AFDELINGSNAAM = "Onbekend";
-    public static final String DEFAULT_AFDELINGSPLAATS = "Onbekend";
-    private String afdelingsNaam;
-    private String afdelingsPlaats;
+    private String afdelingNaam;
+    private String afdelingPlaats;
 
-    public Afdeling(String afdelingsNaam, String afdelingsPlaats) {
-        this.afdelingsNaam = afdelingsNaam;
-        this.afdelingsPlaats = afdelingsPlaats;
+    public Afdeling(String afdelingNaam, String afdelingPlaats) {
+        this.afdelingNaam = afdelingNaam;
+        this.afdelingPlaats = afdelingPlaats;
     }
+
+
 
     public Afdeling() {
-        this(DEFAULT_AFDELINGSNAAM, DEFAULT_AFDELINGSPLAATS);
     }
-
-    public String getAfdelingsNaam() {
-        return afdelingsNaam;
-    }
-
-    public void setAfdelingsNaam(String afdelingsNaam) {
-        this.afdelingsNaam = afdelingsNaam;
-    }
-
-    public String getAfdelingsPlaats() {
-        return afdelingsPlaats;
-    }
-
-    public void setAfdelingsPlaats(String afdelingsPlaats) {
-        this.afdelingsPlaats = afdelingsPlaats;
+    public String toString() {
+        return String.format("afdeling %s te %s", afdelingNaam, afdelingPlaats);
     }
 }
+
+
