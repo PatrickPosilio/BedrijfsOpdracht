@@ -5,6 +5,7 @@ import model.Persoon;
 import model.Werknemer;
 import model.Zzper;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -29,14 +30,28 @@ public class BedrijfLauncher {
         assistent.huurIn(160);
         projectmanager.huurIn(320);
 
-        Persoon[] personen =  new Persoon[4];
-        personen[0] = baas;
-        personen[1] = medewerker;
-        personen[2] = assistent;
-        personen[3] = projectmanager;
+        ArrayList <Persoon> personen = new ArrayList<>();
 
-        for (int teller = 0; teller < personen.length; teller++) {
-        toonJaarinkomen(personen[teller]);}
+        personen.add(new Werknemer("Mark", "Den Haag", afdelingen[2], 10000));
+        personen.add(new Werknemer("Angelique", "Rotterdam", afdelingen[2], 5000));
+        personen.add(new Werknemer("Caroline", "Delft", afdelingen[1], 4000));
+        personen.add(new Zzper("Klaas", "Diemen",50.00,  afdelingen[3]));
+        personen.add(new Zzper("Ronald", "Zaandam", 80, afdelingen[0]));
+        personen.add(new Zzper("Jannie", "Utrecht", 60, afdelingen[0]));
+        personen.add(new Zzper("Anne", "Zwolle", 40.00, afdelingen[0]));
+
+
+        for (int teller = 0; teller < personen.size(); teller++) {
+            if (personen.get(teller) instanceof Zzper){
+                ((Zzper) personen.get(teller)).huurIn(320);
+            }
+        }
+
+
+
+        for (Persoon persoon : personen) { // enhanced for loop
+            toonJaarinkomen(persoon);
+        }
 
     }
     public static void toonJaarinkomen(Persoon persoon){

@@ -38,6 +38,7 @@ public class Werknemer extends Persoon {
             this.maandsalaris = maandsalaris;
         }
     }
+
     public double berekenJaarInkomen() {
         if (heeftRechtOpBonus()) {
             return 12 * maandsalaris + maandsalaris;
@@ -48,9 +49,9 @@ public class Werknemer extends Persoon {
 
     public String toString() {
         if (heeftRechtOpBonus()) {
-            return super.toString() + String.format(" en is een werknemer met recht op een bonus");
+            return super.toString() + " en is een werknemer met recht op een bonus";
         } else {
-            return super.toString() + String.format(" en is een werknemer zonder recht op een bonus");
+            return super.toString() + " en is een werknemer zonder recht op een bonus";
         }
     }
 }
