@@ -15,7 +15,7 @@ public class Werknemer extends Persoon {
 
     public Werknemer(String naam, String woonplaats, Afdeling afdeling, double maandsalaris) {
         super(naam, woonplaats, afdeling);
-        this.maandsalaris = maandsalaris;
+        setMaandsalaris(maandsalaris);
     }
 
     public Werknemer(String naam) {
@@ -32,8 +32,7 @@ public class Werknemer extends Persoon {
 
     public  void setMaandsalaris(double maandsalaris) {
         if (maandsalaris < DEFAULT_MAANDSALARIS) {
-            System.out.println("Het bedrag moet positief zijn, het maandsalaris wordt nu op 0 gezet");
-            this.maandsalaris = DEFAULT_MAANDSALARIS;
+            throw new IllegalArgumentException("Het maandsalaris mag niet negatief zijn");
         } else {
             this.maandsalaris = maandsalaris;
         }
@@ -49,9 +48,10 @@ public class Werknemer extends Persoon {
 
     public String toString() {
         if (heeftRechtOpBonus()) {
-            return super.toString() + " en is een werknemer met recht op een bonus";
+            return super.toString() + " en is een werknemer met recht op een bonus.\n";
         } else {
-            return super.toString() + " en is een werknemer zonder recht op een bonus";
+            return super.toString() + " en is een werknemer zonder recht op een bonus.\n";
         }
     }
+
 }

@@ -6,7 +6,7 @@ import java.util.Scanner;
  * @author Patrick Posilio
  * Purpose of the program
  */
-public class Zzper extends Persoon {
+public class Zzper extends Persoon implements Oproepbaar {
 
     public static final int DEFAULT_UREN_GEWERKT = 0;
     private double uurtarief;
@@ -29,5 +29,4 @@ public class Zzper extends Persoon {
     public String toString() {
         return super.toString() + String.format(" en is een zzp-er met een uurtarief van %.1f", uurtarief);
     }
-
 }
