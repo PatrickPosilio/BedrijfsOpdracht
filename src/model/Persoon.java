@@ -62,12 +62,12 @@ public abstract class Persoon implements Comparable <Persoon> {
     }
 
     public String toString() {
-        return String.format("%s woont in %s en werkt op %s", naam, woonplaats, afdeling.toString() );
+        return String.format("-- %s woont in %s en werkt op %s", naam, woonplaats, afdeling.toString() );
     }
 
     @Override
-    public int compareTo(Persoon o) {
-        return naam.compareTo(o.naam);
+    public int compareTo(Persoon anderePersoon) {
+        return naam.compareTo(anderePersoon.getNaam());
     }
 }
 

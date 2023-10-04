@@ -33,9 +33,8 @@ public class Werknemer extends Persoon {
     public  void setMaandsalaris(double maandsalaris) {
         if (maandsalaris < DEFAULT_MAANDSALARIS) {
             throw new IllegalArgumentException("Het maandsalaris mag niet negatief zijn");
-        } else {
-            this.maandsalaris = maandsalaris;
         }
+        this.maandsalaris = maandsalaris;
     }
 
     public double berekenJaarInkomen() {
@@ -48,9 +47,9 @@ public class Werknemer extends Persoon {
 
     public String toString() {
         if (heeftRechtOpBonus()) {
-            return super.toString() + " en is een werknemer met recht op een bonus.\n";
+            return super.toString() + " en is een werknemer met recht op een bonus.";
         } else {
-            return super.toString() + " en is een werknemer zonder recht op een bonus.\n";
+            return super.toString() + " en is een werknemer zonder recht op een bonus.";
         }
     }
 

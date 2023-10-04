@@ -36,6 +36,8 @@ public class Afdeling {
     public void setAfdelingPlaats(String afdelingPlaats) {
         this.afdelingPlaats = afdelingPlaats;
     }
+
+
 }
 
 
