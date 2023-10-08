@@ -30,6 +30,10 @@ public class Werknemer extends Persoon {
         return maandsalaris >= GRENSWAARDE_BONUS;
     }
 
+    public double getMaandsalaris() {
+        return maandsalaris;
+    }
+
     public  void setMaandsalaris(double maandsalaris) {
         if (maandsalaris < DEFAULT_MAANDSALARIS) {
             throw new IllegalArgumentException("Het maandsalaris mag niet negatief zijn");
